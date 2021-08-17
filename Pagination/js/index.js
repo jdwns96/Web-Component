@@ -1,51 +1,3 @@
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./index.css" />
-  </head>
-  <body>
-    <div>
-      <div class="body"></div>
-      <div class="pagination">
-        <ul>
-          <!-- <li>&#60;</li> -->
-          <!--  list  -->
-          <!-- <li>&#62;</li> -->
-        </ul>
-      </div>
-    </div>
-    <script src="./data.js"></script>
-    <script src="./index.js"></script>
-  </body>
-</html>
-
-```
-
-```css
-.pagination ul {
-  display: flex;
-  list-style: none;
-}
-.pagination ul li {
-  width: 24px;
-  height: 24px;
-  border: 1px solid black;
-  margin: 1rem;
-  cursor: pointer;
-}
-
-.js-current-page {
-  background-color: brown;
-}
-
-```
-
-```javascript
 class App {
   SHOW_BODY_DATA_NUMBER = 10; // 화면에서 보여질 데이터 수
   SHOW_PAGINATION_NUMBER = 5; // 페이지 네이션 표출할 박스 수
@@ -55,7 +7,6 @@ class App {
 
   data; // 서버로 부터 받아온 전체 데이터
   showData = []; // 데이터중 보여줄 데이터
-  pagiList = []; // 페이지 네이션 리스트
   maxPage = 1; // 페이지 전체 숫자
   currentPage = 1; // 페이지 네이션 선택 숫자
 
@@ -120,9 +71,9 @@ class App {
     }
 
     $paginationList = `
-    <li class="js-left-pagination">&#60;</li>
-    ${$paginationList}
-    <li class="js-right-pagination">&#62;</li>`;
+      <li class="js-left-pagination">&#60;</li>
+      ${$paginationList}
+      <li class="js-right-pagination">&#62;</li>`;
 
     return $paginationList;
   }
@@ -185,159 +136,3 @@ class App {
 }
 
 new App(data);
-
-```
-
-```javascript
-const data = [
-  {
-    id: 1,
-    name: "1page",
-  },
-  {
-    id: 2,
-    name: "1page",
-  },
-  {
-    id: 3,
-    name: "1page",
-  },
-  {
-    id: 4,
-    name: "1page",
-  },
-  {
-    id: 5,
-    name: "1page",
-  },
-  {
-    id: 6,
-    name: "2page",
-  },
-  {
-    id: 7,
-    name: "2page",
-  },
-  {
-    id: 8,
-    name: "2page",
-  },
-  {
-    id: 9,
-    name: "2page",
-  },
-  {
-    id: 1,
-    name: "2page",
-  },
-  {
-    id: 1,
-    name: "k",
-  },
-  {
-    id: 1,
-    name: "l",
-  },
-  {
-    id: 1,
-    name: "m",
-  },
-  {
-    id: 1,
-    name: "n",
-  },
-  {
-    id: 1,
-    name: "A",
-  },
-  {
-    id: 1,
-    name: "A",
-  },
-  {
-    id: 1,
-    name: "A",
-  },
-  {
-    id: 1,
-    name: "A",
-  },
-  {
-    id: 1,
-    name: "A",
-  },
-  {
-    id: 1,
-    name: "A",
-  },
-  {
-    id: 1,
-    name: "A",
-  },
-  {
-    id: 1,
-    name: "A",
-  },
-  {
-    id: 1,
-    name: "A",
-  },
-  {
-    id: 1,
-    name: "A",
-  },
-  {
-    id: 1,
-    name: "A",
-  },
-  {
-    id: 1,
-    name: "A",
-  },
-  {
-    id: 1,
-    name: "A",
-  },
-  {
-    id: 1,
-    name: "A",
-  },
-  {
-    id: 1,
-    name: "A",
-  },
-  {
-    id: 1,
-    name: "A",
-  },
-  {
-    id: 1,
-    name: "A",
-  },
-  {
-    id: 1,
-    name: "A",
-  },
-  {
-    id: 1,
-    name: "A",
-  },
-  {
-    id: 1,
-    name: "A",
-  },
-  {
-    id: 1,
-    name: "A",
-  },
-  {
-    id: 1,
-    name: "A",
-  },
-  {
-    id: 1,
-    name: "A",
-  },
-];
-
-```

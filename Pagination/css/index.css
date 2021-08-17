@@ -1,0 +1,15 @@
+.pagination ul {
+  display: flex;
+  list-style: none;
+}
+.pagination ul li {
+  width: 24px;
+  height: 24px;
+  border: 1px solid black;
+  margin: 1rem;
+  cursor: pointer;
+}
+
+.js-current-page {
+  background-color: brown;
+}
