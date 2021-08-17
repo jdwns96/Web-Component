@@ -18,7 +18,6 @@ class App {
 
   /**
    * 필요한정보 현제 페이지, 전체 페이지
-   *
    */
   paginationAlgol() {
     let $paginationList;
@@ -83,6 +82,11 @@ class App {
   renderBody($node) {
     $node.innerHTML = ""; //reset
 
+    this.showData = this.data.slice(
+      (this.currentPage - 1) * this.SHOW_BODY_DATA_NUMBER,
+      this.currentPage * this.SHOW_BODY_DATA_NUMBER
+    );
+
     this.showData.forEach((elem, i) => {
       const $p = document.createElement("p");
       $p.textContent = elem.name;
@@ -101,23 +105,22 @@ class App {
 
   init() {
     this.maxPage = Math.ceil(this.data.length / this.SHOW_BODY_DATA_NUMBER); // 전체 데이터 수 구하기
-    this.showData = this.data.slice(
-      0,
-      this.currentPage * this.SHOW_BODY_DATA_NUMBER
-    ); // 보여줄 데이터 복사하기
-
-    console.log(this.maxPage);
-    console.log(this.showData);
 
     this.$pagi.addEventListener("click", (e) => {
+      e.stopPropagation();
       if (!(e.target.nodeName === "LI")) {
         return;
       }
-      this.currentPage = parseInt(e.target.textContent); // 현제 페이지 이동
-      this.showData = this.data.slice(
-        (this.currentPage - 1) * this.SHOW_BODY_DATA_NUMBER,
-        this.currentPage * this.SHOW_BODY_DATA_NUMBER
-      );
+      if (e.target.classList.contains("js-left-pagination")) {
+        // 왼쪽 버튼
+        this.currentPage !== 1 ? --this.currentPage : null;
+      } else if (e.target.classList.contains("js-right-pagination")) {
+        // 오른쪽 버튼
+        this.currentPage !== this.maxPage ? ++this.currentPage : null;
+      } else {
+        // 숫자 버튼
+        this.currentPage = parseInt(e.target.textContent); // 현제 페이지 이동
+      }
       this.reRender(); // 리렌더링;
     });
   }

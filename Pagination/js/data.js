@@ -41,110 +41,110 @@ const data = [
   },
   {
     id: 1,
-    name: "k",
+    name: "3page",
   },
   {
     id: 1,
-    name: "l",
+    name: "3page",
   },
   {
     id: 1,
-    name: "m",
+    name: "3page",
   },
   {
     id: 1,
-    name: "n",
+    name: "3page",
   },
   {
     id: 1,
-    name: "A",
+    name: "3page",
   },
   {
     id: 1,
-    name: "A",
+    name: "4page",
   },
   {
     id: 1,
-    name: "A",
+    name: "4page",
   },
   {
     id: 1,
-    name: "A",
+    name: "4page",
   },
   {
     id: 1,
-    name: "A",
+    name: "4page",
   },
   {
     id: 1,
-    name: "A",
+    name: "4page",
   },
   {
     id: 1,
-    name: "A",
+    name: "5page",
   },
   {
     id: 1,
-    name: "A",
+    name: "5page",
   },
   {
     id: 1,
-    name: "A",
+    name: "5page",
   },
   {
     id: 1,
-    name: "A",
+    name: "5page",
   },
   {
     id: 1,
-    name: "A",
+    name: "5page",
   },
   {
     id: 1,
-    name: "A",
+    name: "6page",
   },
   {
     id: 1,
-    name: "A",
+    name: "6page",
   },
   {
     id: 1,
-    name: "A",
+    name: "6page",
   },
   {
     id: 1,
-    name: "A",
+    name: "6page",
   },
   {
     id: 1,
-    name: "A",
+    name: "6page",
   },
   {
     id: 1,
-    name: "A",
+    name: "7page",
   },
   {
     id: 1,
-    name: "A",
+    name: "7page",
   },
   {
     id: 1,
-    name: "A",
+    name: "7page",
   },
   {
     id: 1,
-    name: "A",
+    name: "7page",
   },
   {
     id: 1,
-    name: "A",
+    name: "7page",
   },
   {
     id: 1,
-    name: "A",
+    name: "8page",
   },
   {
     id: 1,
-    name: "A",
+    name: "8page",
   },
 ];

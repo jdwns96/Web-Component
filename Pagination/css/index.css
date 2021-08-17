@@ -1,8 +1,44 @@
+.main {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 500px;
+  height: 500px;
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.body {
+  border: 2px solid black;
+  border-radius: 0.225rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.body p {
+  margin: 1rem;
+}
+
+.pagination {
+  margin-top: 2rem;
+  border: 2px solid black;
+  border-radius: 0.225rem;
+  display: flex;
+  justify-content: center;
+}
+
 .pagination ul {
   display: flex;
   list-style: none;
 }
 .pagination ul li {
+  border-radius: 0.125rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 24px;
   height: 24px;
   border: 1px solid black;
@@ -11,5 +47,6 @@
 }
 
 .js-current-page {
-  background-color: brown;
+  background-color: #2489ff;
+  color: #fff;
 }
