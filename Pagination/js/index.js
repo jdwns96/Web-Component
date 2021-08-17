@@ -1,6 +1,5 @@
 class App {
-  SHOW_BODY_DATA_NUMBER = 10; // 화면에서 보여질 데이터 수
-  SHOW_PAGINATION_NUMBER = 5; // 페이지 네이션 표출할 박스 수
+  SHOW_BODY_DATA_NUMBER = 5; // 화면에서 보여질 데이터 수
 
   $body = document.querySelector(".body");
   $pagi = document.querySelector(".pagination ul");
@@ -23,13 +22,12 @@ class App {
    */
   paginationAlgol() {
     let $paginationList;
+
+    const arr = this.maxPage <= 5 ? Array(this.maxPage) : Array(5);
+
     if (this.currentPage < 5 / 2) {
       // 1 ,2 일경우
       // 1 ~ 5
-
-      // 5보다 작은 경우
-      const arr = this.maxPage <= 5 ? Array(this.maxPage) : Array(5);
-
       $paginationList = arr
         .fill(0)
         .map((elem, i) => {
@@ -43,7 +41,7 @@ class App {
     } else if (this.currentPage > this.maxPage - 5 / 2) {
       // 끝에서 n - 1 , n 일 경우
       // n-4, n -3, n-2, n-1, n
-      $paginationList = Array(5)
+      $paginationList = arr
         .fill(0)
         .map((elem, i) => {
           if (this.currentPage !== this.maxPage - i) {
@@ -56,7 +54,7 @@ class App {
         .join("");
     } else {
       // 나머지일 경우 중앙정렬
-      $paginationList = Array(5)
+      $paginationList = arr
         .fill(0)
         .map((elem, i) => {
           if (i !== 2) {
@@ -102,7 +100,7 @@ class App {
   }
 
   init() {
-    this.maxPage = Math.ceil(this.data.length / this.SHOW_PAGINATION_NUMBER); // 전체 데이터 수 구하기
+    this.maxPage = Math.ceil(this.data.length / this.SHOW_BODY_DATA_NUMBER); // 전체 데이터 수 구하기
     this.showData = this.data.slice(
       0,
       this.currentPage * this.SHOW_BODY_DATA_NUMBER
@@ -116,10 +114,10 @@ class App {
         return;
       }
       this.currentPage = parseInt(e.target.textContent); // 현제 페이지 이동
-      // this.showData = this.data.slice(
-      //   (this.currentPage * this.SHOW_BODY_DATA_NUMBER) - 1,
-      //   (this.currentPage * this.SHOW_BODY_DATA_NUMBER)
-      // );
+      this.showData = this.data.slice(
+        (this.currentPage - 1) * this.SHOW_BODY_DATA_NUMBER,
+        this.currentPage * this.SHOW_BODY_DATA_NUMBER
+      );
       this.reRender(); // 리렌더링;
     });
   }
@@ -127,6 +125,7 @@ class App {
   reRender() {
     this.renderBody(this.$body);
     this.renderPagi(this.$pagi);
+    console.log(`현재 페이지: ${this.currentPage}`);
   }
 
   async main() {
